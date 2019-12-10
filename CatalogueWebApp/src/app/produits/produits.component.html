@@ -1,0 +1,10 @@
+<table class="table table-striped">
+  <tr>
+    <th>Nom du produit</th>
+    <th>Prix</th>
+  </tr>
+  <tr *ngFor="let p of products._embedded.products">
+    <td>{{p.name}}</td>
+    <td>{{p.price|number:'0.4'}}</td>
+  </tr>
+</table>
