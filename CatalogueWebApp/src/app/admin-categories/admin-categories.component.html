@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Gestion des Catégories</div>
+  <div class="panel-body">
+  <div>
+    <div>
+      <a style="cursor:pointer" class="clickable" (click)="onNewCat()"><img src="assets/images/plus_math_24px.png"/></a>
+    </div>
+    <p></p>
+    <div *ngIf="mode == 'new-cat'" class="col-md-6">
+      <form #f="ngForm" (ngSubmit)="onSaveCat(f.value)">
+        <div class="form-group">
+          <input placeholder="Name" type="text" name="name" ngModel class="form-control">
+        </div>
+        <button class="btn btn-success" type="submit">Save</button>
+      </form>
+    </div>
+    <div *ngIf="mode == 'edit-cat'" class="col-md-6">
+      <form #f="ngForm" (ngSubmit)="onUpdateCat(f.value)">
+        <div class="form-group">
+          <input placeholder="Name" type="text" name="name" ngModel class="form-control" [(ngModel)]="currentCategorie.name">
+        </div>
+        <button class="btn btn-success" type="submit">Update</button>
+      </form>
+    </div>
+    <div *ngIf="mode == 'list'">
+    <table class="table" *ngIf="categories">
+      <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+      <tr *ngFor="let c of categories._embedded.categories">
+        <td>{{c.name}}</td>
+        <td><a style="cursor:pointer" class="clickable" (click)="onDeleteCat(c)"><img src="assets/images/delete_sign_24px.png"/></a></td>
+        <td><a style="cursor:pointer" class="clickable" (click)="onEditCat(c)"><img src="assets/images/pencil_24px.png"/></a></td>
+      </tr>
+      </thead>
+    </table>
+    </div>
+  </div>
+  </div>
+</div>

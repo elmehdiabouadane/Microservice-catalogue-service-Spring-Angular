@@ -1,10 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Liste des Produits</div>
+<div class="panel-body">
 <table class="table table-striped">
+  <thead>
   <tr>
-    <th>Nom du produit</th>
-    <th>Prix</th>
+    <th class="thead-dark">Nom du produit</th>
+    <th class="thead-dark">Prix</th>
   </tr>
   <tr *ngFor="let p of products._embedded.products">
     <td>{{p.name}}</td>
-    <td>{{p.price|number:'0.4'}}</td>
+    <td>{{p.price|number:'0.4'}} DH</td>
   </tr>
+  </thead>
 </table>
+</div>
+
+</div>

@@ -9,9 +9,9 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li *ngIf="isAdmin()"><a href="#">Gestion des Catégories</a></li>
-          <li *ngIf="isUser()"><a href="#">Gestion des Produits</a></li>
-          <li *ngIf="isAdmin()"><a href="#">Gestion des Utilisateurs</a></li>
+          <li *ngIf="isAdmin()"><a routerLink="/adminCategories">Gestion des Catégories</a></li>
+          <li *ngIf="isUser()"><a routerLink="/adminProducts">Gestion des Produits</a></li>
+          <li *ngIf="isAdmin()"><a routerLink="/adminUsers">Gestion des Utilisateurs</a></li>
         </ul>
       </li>
       <ul></ul>
